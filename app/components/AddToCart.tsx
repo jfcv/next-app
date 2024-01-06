@@ -1,14 +1,15 @@
 'use client'
 import React from 'react'
 
-const ProductCart = () => {
+const AddToCart = () => {
   return (
     <div>
         <button onClick={() => console.log('client component clicked')}>
-          Add to Cart
+            Add to Cart
         </button>
     </div>
   )
+  
 }
 
-export default ProductCart
+export default AddToCart

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import ProductCart from "./components/ProductCart";
+import ProductCard from "./components/ProductCard";
 
 /**
  * Client-Side Navigation
@@ -9,7 +9,7 @@ export default function Home() {
     <main>
       <h1>Hello World</h1>
       <Link href="/users">Users</Link>
-      <ProductCart/>
+      <ProductCard />
     </main>
   )
 }
