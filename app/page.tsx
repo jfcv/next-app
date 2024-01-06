@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ProductCart from "./components/ProductCart";
 
 /**
  * Client-Side Navigation
@@ -8,6 +9,7 @@ export default function Home() {
     <main>
       <h1>Hello World</h1>
       <Link href="/users">Users</Link>
+      <ProductCart/>
     </main>
   )
 }
