@@ -6,7 +6,16 @@ interface User {
 }
 
 const UsersPage = async () => {
-  const res = await fetch('https://jsonplaceholder.typicode.com/users')
+  /**
+   * this means is gonna fresh data from the backend every 10 seconds
+   * this just works for fetch()
+   * but DOESN'T WORK for axios()
+   */
+  const res = await fetch('https://jsonplaceholder.typicode.com/users', {
+    next: {
+      revalidate: 10
+    }
+  })
   const users: User[] = await res.json()
 
   return (
