@@ -1,0 +1,8 @@
+.card {
+    padding: 1rem;
+    border: 1px solid #ccc;
+}
+
+.header {
+    font-weight: bold;
+}

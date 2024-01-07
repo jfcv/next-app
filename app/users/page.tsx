@@ -7,7 +7,7 @@ interface User {
 
 const UsersPage = async () => {
   /**
-   * this means is gonna fresh data from the backend every 10 seconds
+   * this means is gonna refresh data from the backend every 10 seconds
    * this just works for fetch()
    * but DOESN'T WORK for axios()
    */

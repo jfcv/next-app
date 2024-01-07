@@ -1,4 +1,4 @@
-'use client'
+'use client' // this makes it a client component, a separated component which needs interactivity
 import React from 'react'
 
 const AddToCart = () => {
