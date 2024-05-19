@@ -9,7 +9,7 @@ const ProductCard = () => {
     // that we can style our components from
     // this file
     // the downside to that is that it violates
-    // the separation of concerns principle
+    // the separation of concerns principle !!!
     <div>
         <h2 className={styles.header}>Card #1</h2>
 
