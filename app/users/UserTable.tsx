@@ -18,7 +18,7 @@ const UserTable = async ({sortOrder}: Props) => {
    * this just works for fetch()
    * but DOESN'T WORK for axios()
    */
-  const res = await fetch('https://jsonplaceholder.typicode.com/xusers', {
+  const res = await fetch('https://jsonplaceholder.typicode.com/users', {
       next: {
         revalidate: 10
       }
