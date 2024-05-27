@@ -6,3 +6,12 @@ export function GET(request: NextRequest) { // to prevent caching you have to ad
         {id: 2, name: 'John'},
     ]);
 }
+
+export async function POST(request: NextRequest) {
+    const body = await request.json();
+
+    if(!body.name)
+        return NextResponse.json({ error: 'Name is required' }, { status: 400 })
+
+    return NextResponse.json({id: 4, ...body}, { status: 201 });
+}
