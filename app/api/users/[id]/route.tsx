@@ -23,25 +23,46 @@ export async function GET(request: NextRequest, { params: {id} }: Props) {
 
 export async function PUT(request: NextRequest, { params: {id} }: Props) {
     const body = await request.json();
-    // bad request, 400
+
     const validation = schema.safeParse(body);
     if(!validation.success)
         return NextResponse.json(validation.error.errors, {status: 400});
 
-    // user not found, 404
-    if(id > 10)
+    const user = await prisma.user.findUnique({
+        where: {
+            id: Number(id)
+        }
+    });
+    
+    if(!user)
         return NextResponse.json({ error: 'User not found'}, { status: 404});
 
-    // update the user
-    return NextResponse.json({ id: Number(id), name: body.name});
+    const { name, email } = body;
+
+    const updatedUser = await prisma.user.update({
+        where: { id: user.id },
+        data: {
+            name,
+            email
+        }
+    });
+    
+    return NextResponse.json(updatedUser);
 }
 
 export async function DELETE(request: NextRequest, { params: {id} }: Props) {
-        // user not found, 404
-        if(id > 10)
+        const user = await prisma.user.findUnique({
+            where: {
+                id: Number(id)
+            }
+        });
+        
+        if(!user)
             return NextResponse.json({ error: 'User not found'}, { status: 404});
 
-        // delete the user from the db, in a real scenario
+        const deletedUser = await prisma.user.delete({
+            where: { id: user.id }
+        });
 
-        return NextResponse.json({});
+        return NextResponse.json(deletedUser);
 }
