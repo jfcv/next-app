@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import schema from "../schema";
+import prisma from "@/prisma/client";
 
 interface Props {
     params: {
@@ -7,11 +8,17 @@ interface Props {
     }
 }
 
-export function GET(request: NextRequest, { params: {id} }: Props) {
-    if(id > 10)
+export async function GET(request: NextRequest, { params: {id} }: Props) {
+    const user = await prisma.user.findUnique({
+        where: {
+            id: Number(id)
+        }
+    })
+
+    if(!user)
         return NextResponse.json({ error: 'User not found'}, { status: 404});
 
-    return NextResponse.json({ id: Number(id), name: 'Mosh'});
+    return NextResponse.json(user);
 }
 
 export async function PUT(request: NextRequest, { params: {id} }: Props) {
