@@ -2,7 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import schema from "./schema";
 import prisma from "@/prisma/client";
 
-export async function GET(request: NextRequest) { // to prevent caching you have to add this request to the endpoint
+// to prevent caching you have to add this request to the endpoint
+export async function GET(request: NextRequest) { 
 
     const users = await prisma.user.findMany();
 
