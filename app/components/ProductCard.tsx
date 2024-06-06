@@ -10,7 +10,7 @@ const ProductCard = () => {
     // this file
     // the downside to that is that it violates
     // the separation of concerns principle !!!
-    <div>
+    <div className='pt-5 space-y-5'>
         <h2 className={styles.header}>Card #1</h2>
 
         <p>Lorem ipsum dolor sit amet.</p>
