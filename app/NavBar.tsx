@@ -27,7 +27,7 @@ const NavBar = () => {
                   href='https://github.com/jfcv' 
                   className='text-violet-600 underline' 
                   target='_blank'>
-                    {session.user?.name}
+                    {session.user?.name || session.user?.email}
               </Link>
 
               <Link 
