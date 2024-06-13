@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import { Html, Body, Container, Tailwind, Text, Link, Preview } from '@react-email/components'
 
