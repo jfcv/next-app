@@ -18,6 +18,8 @@ const NavBar = () => {
 
         <Link href='/admin'>Admin</Link>
 
+        <Link href='/images'>Images</Link>
+
         { status === 'loading' && <span className="loading loading-dots loading-md"></span> }
 
         { status === 'authenticated' 
