@@ -3,6 +3,7 @@
 import { useSession } from 'next-auth/react';
 import Link from 'next/link'
 import React from 'react'
+import Loader from './components/Loader';
 
 const NavBar = () => {
   const { status, data: session } = useSession();
@@ -20,7 +21,7 @@ const NavBar = () => {
 
         <Link href='/images'>Images</Link>
 
-        { status === 'loading' && <span className="loading loading-dots loading-md"></span> }
+        { status === 'loading' && <Loader /> }
 
         { status === 'authenticated' 
             && 

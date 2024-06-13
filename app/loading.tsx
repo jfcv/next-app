@@ -1,8 +1,9 @@
 import React from 'react'
+import Loader from './components/Loader'
 
 const Loading = () => {
   return (
-    <span className="loading loading-dots loading-md"></span>
+    <Loader />
   )
 }
 

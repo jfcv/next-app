@@ -7,9 +7,14 @@ import { authOptions } from "./api/auth/[...nextauth]/route";
 // import HeavyComponent from "./components/HeavyComponent"; // -> page.js bundle size 112kb
 import { useState } from "react";
 import dynamic from "next/dynamic";
+import Loader from "./components/Loader";
 // Lazy loading
 const HeavyComponent = dynamic(
-  () => import('./components/HeavyComponent') // -> page.js bundle size 116kb
+  () => import('./components/HeavyComponent'), // -> page.js bundle size 116kb
+  {
+    ssr: false,
+    loading: () => <Loader />
+  }
 );
 
 /**
@@ -31,6 +36,8 @@ export default function Home() {
       <ProductCard />
 
       <button className="btn mt-5" onClick={() => setVisible(true)}>Show</button>
+
+      <br />
 
       {isVisible && <HeavyComponent />}
     </main>
