@@ -4,14 +4,14 @@ import prisma from "@/prisma/client";
 
 interface Props {
     params: {
-        id: number;
+        id: string;
     }
 }
 
 export async function GET(request: NextRequest, { params: {id} }: Props) {
     const user = await prisma.user.findUnique({
         where: {
-            id: Number(id)
+            id
         }
     })
 
@@ -30,7 +30,7 @@ export async function PUT(request: NextRequest, { params: {id} }: Props) {
 
     const user = await prisma.user.findUnique({
         where: {
-            id: Number(id)
+            id
         }
     });
     
@@ -53,7 +53,7 @@ export async function PUT(request: NextRequest, { params: {id} }: Props) {
 export async function DELETE(request: NextRequest, { params: {id} }: Props) {
         const user = await prisma.user.findUnique({
             where: {
-                id: Number(id)
+                id
             }
         });
         

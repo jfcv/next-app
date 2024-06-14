@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import ProductCard from "./components/ProductCard";
-import { getServerSession } from "next-auth";
-import { authOptions } from "./api/auth/[...nextauth]/route";
+// import { getServerSession } from "next-auth";
+// import { authOptions } from "./api/auth/[...nextauth]/route";
 // import HeavyComponent from "./components/HeavyComponent"; // -> page.js bundle size 112kb
 import { useState } from "react";
 import dynamic from "next/dynamic";
