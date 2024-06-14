@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
-    "daisyui": "^4.10.4"
+    "daisyui": "^4.10.4",
+    "encoding": "^0.1.13"
   }
 }
